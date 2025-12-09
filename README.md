@@ -14,5 +14,81 @@
    - `s` - символ для рисования
    - `a` - катет а
    - `b` - катет b
-3.
-   
+3. Использоват цикл for:
+   - `(i = b - 1; i >= 0; i--)`
+   - `(j = 0; j < a; j++)`
+  
+4. Гипотенуза:
+   - `exact_j = (a - 1) * (1.0 - (double)i / (b - 1))`
+5. Вывести результат на экран:
+   - `s`
+
+
+### Блок-схема
+
+
+
+## 2. Реализация программы 
+```
+#include <stdio.h>
+#include <math.h>
+#include <locale.h>
+
+int main() {
+    setlocale(LC_ALL, "RUS");
+    char s;
+    int a, b;
+
+    printf("Введите символ для рисования: ");
+    scanf(" %c", &s);
+
+    printf("Введите длину горизонтального катета (a, основание): ");
+    scanf("%d", &a);
+
+    printf("Введите длину вертикального катета (b, высота): ");
+    scanf("%d", &b);
+
+    while (getchar() != '\n');
+
+    printf("\nРезультат:\n");
+
+    for (int i = b - 1; i >= 0; i--) {
+        for (int j = 0; j < a; j++) {
+            int draw = 0;
+
+            if (j == 0) {
+                draw = 1;
+            }           
+            else if (i == 0) {
+                draw = 1;
+            }
+            else if (b > 1 && a > 1) {
+                double exact_j = (a - 1) * (1.0 - (double)i / (b - 1));
+
+                if (fabs(j - exact_j) < 0.5) {
+                    draw = 1;
+                }
+            }
+
+            if (draw) {
+                printf("%c", s);
+            }
+            else {
+                printf(" ");
+            }
+        }
+        printf("\n");
+    }
+
+    printf("\nНажмите Enter для выхода...");
+    getchar();
+
+    return 0;
+}
+```
+
+## 3. Результаты работы программы
+<img width="1974" height="729" alt="image" src="https://github.com/user-attachments/assets/23b76fc2-a78d-429f-96b4-bc257a97626f" />
+
+## 4. Информация о разработчике
+### Ахмедов О.З. бИПТ-252
