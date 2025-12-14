@@ -23,9 +23,11 @@
 5. Вывести результат на экран:
    - `s`
 
-
+6. **Конец**
+   
 ### Блок-схема
 
+<img width="1036" height="1344" alt="image" src="https://github.com/user-attachments/assets/748d0c39-d830-4459-8dab-8e33f963beab" />
 
 
 ## 2. Реализация программы 
